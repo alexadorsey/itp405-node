@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= site_title %></title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style>
+        body {
+            text-align:center
+        }
+        table {
+            margin: 0 auto;
+            text-align:center;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th,td {
+            padding: 5px;  
+        }
+        th {
+            text-align: center;
+            background-color:#e3e3e3;
+        }
+        h1 {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <h1>DVD Search using Node.js</h1>
+    <br/>
+    <h4><%= dvds.length %> <%= award %> results for '<%= title %>'</h4>
+    
+    <div id="results">
+        <table>
+            <col width="700">
+            <col width="100">
+            <tr>
+                <th>Title</th>
+                <th id="award">Award</th>
+            </tr>
+            <% dvds.forEach(function(dvd) { %>
+                <tr>
+                    <td><%= dvd.title %></td>
+                    <td><%= dvd.award %></td>
+                </tr>
+           <% }); %>
+        </table>
+    </div>
+    
+    <!-- Bootstrap Javascript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>
